@@ -34,3 +34,7 @@ npx expo start
 3. Expo Notifications: For sending push notifications.
 4. React Native Maps: For showing the map in the location tab.
 5. react-native-appearance: To manage light and dark mode themes.
+
+## Web screenshot demo
+
+Run `npm run web` and open `/?demo=screenshot` to show the sample sign with canned pinyin. A visible notice identifies the demo. Web OCR is unavailable, and the normal web page says so without showing recognition results. Native apps continue to use ML Kit.

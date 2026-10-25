@@ -61,6 +61,12 @@ export default function CameraScreen() {
 
 const styles = StyleSheet.create({
   notice: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    zIndex: 10,
+    backgroundColor: '#111',
     color: 'white',
     padding: 16,
     textAlign: 'center',

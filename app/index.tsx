@@ -5,12 +5,14 @@ import Photo from '@/components/Photo';
 import AdBanner from '@/components/AdBanner';
 import { processImage } from '@/services/ocrService';
 import { CameraCapturedPicture } from 'expo-camera';
+import { Platform } from 'react-native';
 
 export default function CameraScreen() {
   const [photo, setPhoto] = useState<CameraCapturedPicture>();
   const [recognizedData, setRecognizedData] = useState<any[]>([]);
   const [imageSize, setImageSize] = useState({ width: 0, height: 0 });
   const [originalImageSize, setOriginalImageSize] = useState({ width: 0, height: 0 });
+  React.useEffect(() => { if (Platform.OS === 'web' && !photo) handlePictureTaken({ uri: '/sign.jpg', width: 900, height: 1200 } as CameraCapturedPicture); }, []);
 
   const handlePictureTaken = async (photo: CameraCapturedPicture) => {
     setPhoto(photo);
